@@ -1,0 +1,67 @@
+<script>
+    // ### Маленький (50 рублей, 20 калорий).
+    // ### Большой (100 рублей, 40 калорий).
+    // ### Гамбургер может быть с одним из нескольких видов начинок (обязательно):
+    // ### Напишите программу, рассчитывающую стоимость и калорийность гамбургера.
+
+    class Burger {
+        constructor() {
+            this.filling = [];
+            this.price = 0;
+            this.kkal = 0;
+            this.fillings = [
+                {
+                    type: 'Сыр',
+                    price: 10,
+                    kkal: 20
+                },
+                {
+                    type: 'Салат',
+                    price: 20,
+                    kkal: 5
+                },
+                {
+                    type: 'Картофель',
+                    price: 15,
+                    kkal: 10
+                },
+                {
+                    type: 'Приправа',
+                    price: 15,
+                    kkal: 0
+                },
+                {
+                    type: 'Майонез',
+                    price: 20,
+                    kkal: 5
+                }
+            ]
+        }
+        changeInfo(price, kkal) {
+            this.price += price;
+            this.kkal += kkal;
+        }
+        sizeL() {
+            this.changeInfo(100, 40);
+        }
+        sizeS() {
+            this.changeInfo(50, 20);
+        }
+        addFilling(type) {
+            let price = this.fillings.find(fill => fill.type === type).price;
+            let kkal = this.fillings.find(fill => fill.type === type).kkal;
+            this.changeInfo(price, kkal)
+        }
+    }
+
+    const orderOne = new Burger;
+
+    orderOne.sizeS();
+    console.log(orderOne)
+    orderOne.addFilling('Сыр');
+    console.log(orderOne)
+    orderOne.addFilling('Приправа');
+    console.log(orderOne)
+
+
+</script>
