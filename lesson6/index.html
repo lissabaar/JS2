@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShop</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="script.js" async></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="container">
+                <nav class="menu">
+                    <ul class="menu-list">
+                        <li><a href="#" class="menu-link">Главная</a></li>
+                        <li><a href="#" class="menu-link">Каталог</a></li>
+                        <li><a href="#" class="menu-link">Акции</a></li>
+                        <li><a href="#" class="menu-link">Доставка</a></li>
+                        <li><a href="#" class="menu-link">Личный кабинет</a></li>
+                    </ul>
+                </nav>
+                <cart :items="cartItems"></cart>
+                <search></search>
+            </div>
+        </header>
+        <main class="main container">
+            <p v-if="isItemsListEmpty">Нет данных</p>
+            <catalog-error v-if="isError"></catalog-error>
+            <catalog-list :items="filteredItems" :isError="isError"></catalog-list>
+        </main>
+    </div>
+</body>
+
+</html>
