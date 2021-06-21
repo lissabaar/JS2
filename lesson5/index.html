@@ -24,20 +24,15 @@
                         <li><a href="#" class="menu-link">Личный кабинет</a></li>
                     </ul>
                 </nav>
-                <button id="cart-btn" @click="openCart"></button>
-                <div id="user-cart" v-show="isVisibleCart">
-                    <h2 class="cart-title">Корзина</h3>
-                        <button id="cart-close" @click="closeCart">[x]</button>
-                        <div id="cart-items"></div>
-                </div>
-                <input type="text" class="goods-search" @input="e => filterItems(e)" placeholder="Поиск">
-                <!-- <button class="search-button" type="button">Искать</button> -->
+                <cart></cart>
+                <search></search>
             </div>
         </header>
         <main class="main container">
             <p v-if="isItemsListEmpty">Нет данных</p>
-            <div class="catalog-list">
-            </div>
+            <!-- <catalog-error></catalog-error> -->
+            <catalog-list></catalog-list>
+            <!-- <catalog-list :items="filteredItems"></catalog-list> -->
         </main>
     </div>
 </body>
