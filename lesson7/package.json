@@ -1,0 +1,19 @@
+{
+  "name": "lesson7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "date-fns": "^2.22.1",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "node-static": "^0.7.11",
+    "vue": "^2.6.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
