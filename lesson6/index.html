@@ -24,15 +24,14 @@
                         <li><a href="#" class="menu-link">Личный кабинет</a></li>
                     </ul>
                 </nav>
-                <cart></cart>
+                <cart :items="cartItems"></cart>
                 <search></search>
             </div>
         </header>
         <main class="main container">
             <p v-if="isItemsListEmpty">Нет данных</p>
-            <!-- <catalog-error></catalog-error> -->
-            <catalog-list></catalog-list>
-            <!-- <catalog-list :items="filteredItems"></catalog-list> -->
+            <catalog-error v-if="isError"></catalog-error>
+            <catalog-list :items="filteredItems" :isError="isError"></catalog-list>
         </main>
     </div>
 </body>
